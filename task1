@@ -1,0 +1,10 @@
+bq mk DATASET_NAME
+
+gsutil mb gs://BUCKET_NAME
+
+
+gsutil cp gs://cloud-training/gsp323/lab.csv  .
+  
+gsutil cp gs://cloud-training/gsp323/lab.schema .
+ 
+cat lab.schema
