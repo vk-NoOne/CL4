@@ -1,9 +1,3 @@
-export API_KEY=AIzaSyCnOPZaJj5tw2fPwy73alw6qd0GYDUzDdI
-
-export TASK_3_BUCKET_NAME=gs://qwiklabs-gcp-00-971b3374d1db-marking/task3-gcs-742.result
-
-export TASK_4_BUCKET_NAME=gs://qwiklabs-gcp-00-971b3374d1db-marking/task4-cnl-509.result
-
 
 gcloud iam service-accounts create quicklab \
   --display-name "my natural language service account"
