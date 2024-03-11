@@ -1,0 +1,22 @@
+export API_KEY=AIzaSyCnOPZaJj5tw2fPwy73alw6qd0GYDUzDdI
+
+export TASK_3_BUCKET_NAME=gs://qwiklabs-gcp-00-971b3374d1db-marking/task3-gcs-742.result
+
+export TASK_4_BUCKET_NAME=gs://qwiklabs-gcp-00-971b3374d1db-marking/task4-cnl-509.result
+
+
+gcloud iam service-accounts create quicklab \
+  --display-name "my natural language service account"
+
+gcloud iam service-accounts keys create ~/key.json \
+  --iam-account quicklab@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com
+
+export GOOGLE_APPLICATION_CREDENTIALS="/home/$USER/key.json"
+
+gcloud auth activate-service-account quicklab@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --key-file=$GOOGLE_APPLICATION_CREDENTIALS
+
+gcloud ml language analyze-entities --content="Old Norse texts portray Odin as one-eyed and long-bearded, frequently wielding a spear named Gungnir and wearing a cloak and a broad hat." > result.json
+
+
+
+gcloud auth login --no-launch-browser
